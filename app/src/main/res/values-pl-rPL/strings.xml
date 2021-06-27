@@ -27,4 +27,6 @@
     <string name="version">Wersja: 1.0</string>
     <string name="hold">Przytrzymaj aby usunąć</string>
     <string name="deleted">Usunięto</string>
+    <string name="transmission" translatable="false">Przekładnia</string>
+    <string name="suspension_geometry">Geometria zawieszenia</string>
 </resources>

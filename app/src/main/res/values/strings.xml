@@ -14,8 +14,8 @@
     <string name="btn_calc">Calculate!</string>
     <string name="setup_name">Setup name (f.e. track name)</string>
     <string name="aero">Aerodynamics</string>
-    <string name="transmission" translatable="false">Transmission</string>
-    <string name="suspension_geometry" translatable="false">Suspension geometry</string>
+    <string name="transmission">Transmission</string>
+    <string name="suspension_geometry">Suspension geometry</string>
     <string name="suspension">Suspension</string>
     <string name="brakes">Brakes</string>
     <string name="tyres">Tyres</string>

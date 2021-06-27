@@ -1,5 +1,7 @@
 package pl.edu.pwr.s249248.simracinghelper;
 
+import java.util.Locale;
+
 public class SetupStorage {
     private int id;
     private String setup_name;
@@ -32,13 +34,29 @@ public class SetupStorage {
 
     @Override
     public String toString() {
-        return setup_name + "\n" + "\n"
-                + "Aerodynamics = " + aero + "\n"
-                + "Transmission = " + transmission + "\n"
-                + "Suspension geometry = " + geometry + "\n"
-                + "Suspension = " + suspension + "\n"
-                + "Brakes = " + brakes + "\n"
-                + "Tyres = " + tyres + "\n";
+        String language = Locale.getDefault().getLanguage();
+        String lang_string = null;
+        if(language == "pl")
+        {
+            lang_string=setup_name + "\n" + "\n"
+                    + "Aerodynamika = " + aero + "\n"
+                    + "Przekładnia = " + transmission + "\n"
+                    + "Geometria zawieszenia = " + geometry + "\n"
+                    + "Zawieszenie = " + suspension + "\n"
+                    + "Hamulce = " + brakes + "\n"
+                    + "Opony = " + tyres + "\n";
+        }
+        else
+        {
+            lang_string=setup_name + "\n" + "\n"
+                    + "Aerodynamics = " + aero + "\n"
+                    + "Transmission = " + transmission + "\n"
+                    + "Suspension geometry = " + geometry + "\n"
+                    + "Suspension = " + suspension + "\n"
+                    + "Brakes = " + brakes + "\n"
+                    + "Tyres = " + tyres + "\n";
+        }
+        return lang_string;
     }
 
 
