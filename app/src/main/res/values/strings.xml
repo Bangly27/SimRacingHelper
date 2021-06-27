@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SimRacing Helper</string>
+    <string name="race_length">Race length (in minutes)</string>
+    <string name="lap_time">Lap time (min:sec:ms)</string>
+    <string name="fuel_per_lap">Fuel per lap</string>
+    <string name="total_laps">Total laps</string>
+    <string name="minimum_fuel">Minimum Fuel</string>
+    <string name="safe">Safe (full formation lap)</string>
+    <string name="recommended_fuel">Recommended Fuel</string>
+    <string name="menu_fuel">Fuel calculator</string>
+    <string name="menu_setups">Car setups (F1 Franchise)</string>
+    <string name="menu_about">About</string>
+    <string name="error_data">Check your data!</string>
+    <string name="btn_calc">Calculate!</string>
+    <string name="setup_name">Setup name (f.e. track name)</string>
+    <string name="aero">Aerodynamics</string>
+    <string name="transmission" translatable="false">Transmission</string>
+    <string name="suspension_geometry" translatable="false">Suspension geometry</string>
+    <string name="suspension">Suspension</string>
+    <string name="brakes">Brakes</string>
+    <string name="tyres">Tyres</string>
+    <string name="wet_tyres">Wet tyres</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_view_setups">View All Setups</string>
+    <string name="about_text">Author: Piotr Stachecki</string>
+    <string name="btn_bug">Report a bug</string>
+    <string name="btn_donate">Donate!</string>
+    <string name="version">Version: 1.0</string>
+    <string name="hold">Hold to delete</string>
+    <string name="deleted">Deleted</string>
+</resources>

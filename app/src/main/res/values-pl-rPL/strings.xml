@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimRacing Helper</string>
+    <string name="race_length">Długość wyścigu (w minutach)</string>
+    <string name="lap_time">Czas okrążenia (min:sek:ms)</string>
+    <string name="fuel_per_lap">Paliwo na okrążenie</string>
+    <string name="total_laps">Ilość okrążeń</string>
+    <string name="minimum_fuel">Minimalna ilość paliwa</string>
+    <string name="safe">Bezpieczna ilość paliwa</string>
+    <string name="recommended_fuel">Zalecana ilość paliwa</string>
+    <string name="menu_fuel">Kalkulator paliwa</string>
+    <string name="menu_setups">Ustawienia samochodu (seria F1)</string>
+    <string name="menu_about">O autorze</string>
+    <string name="error_data">Sprawdź dane!</string>
+    <string name="btn_calc">Przelicz!</string>
+    <string name="setup_name">Nazwa ustawień (np nazwa toru)</string>
+    <string name="aero">Aerodynamika</string>
+    <string name="suspension">Zawieszenie</string>
+    <string name="brakes">Hamulce</string>
+    <string name="tyres">Tyres</string>
+    <string name="wet_tyres">Opony deszczowe</string>
+    <string name="btn_add">Dodaj</string>
+    <string name="btn_view_setups">Pokaż wszystkie ustawienia</string>
+    <string name="about_text">Autor: Piotr Stachecki</string>
+    <string name="btn_bug">Zgłoś błąd</string>
+    <string name="btn_donate">Dotacja!</string>
+    <string name="version">Wersja: 1.0</string>
+    <string name="hold">Przytrzymaj aby usunąć</string>
+    <string name="deleted">Usunięto</string>
+</resources>
