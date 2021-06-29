@@ -1,8 +1,10 @@
 package pl.edu.pwr.s249248.simracinghelper;
 
+import android.content.res.Resources;
+
 import java.util.Locale;
 
-public class SetupStorage {
+public class SetupModel {
     private int id;
     private String setup_name;
     private String aero;
@@ -13,7 +15,7 @@ public class SetupStorage {
     private String tyres;
     private boolean areWetTyresOn;
 
-    public SetupStorage(int id, String setup_name, String aero, String transmission, String geometry, String suspension, String brakes, String tyres, boolean areWetTyresOn) {
+    public SetupModel(int id, String setup_name, String aero, String transmission, String geometry, String suspension, String brakes, String tyres, boolean areWetTyresOn) {
         this.id = id;
         this.setup_name = setup_name;
         this.aero = aero;
@@ -25,11 +27,11 @@ public class SetupStorage {
         this.areWetTyresOn = areWetTyresOn;
     }
 
-    public SetupStorage(String setup_name) {
+    public SetupModel(String setup_name) {
         this.setup_name = setup_name;
     }
 
-    public SetupStorage() {
+    public SetupModel() {
     }
 
     @Override

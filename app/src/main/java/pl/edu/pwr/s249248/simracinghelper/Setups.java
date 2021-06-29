@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -42,19 +39,19 @@ public class Setups extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SetupStorage setupStorage;
+                SetupModel setupModel;
                 try{
-                    setupStorage = new SetupStorage(-1, et_track_name.getText().toString(), et_aero.getText().toString(), et_transmission.getText().toString(), et_geometry.getText().toString(), et_suspension.getText().toString(), et_brakes.getText().toString(), et_tyres.getText().toString(), sw_areWetTyresOn.isChecked());
+                    setupModel = new SetupModel(-1, et_track_name.getText().toString(), et_aero.getText().toString(), et_transmission.getText().toString(), et_geometry.getText().toString(), et_suspension.getText().toString(), et_brakes.getText().toString(), et_tyres.getText().toString(), sw_areWetTyresOn.isChecked());
                     //Toast.makeText(Setups.this, setupStorage.toString() , Toast.LENGTH_SHORT).show();
                 }
                 catch(Exception e){
                     //Toast.makeText(Setups.this, "Error" , Toast.LENGTH_SHORT).show();
-                    setupStorage = new SetupStorage(-1,"Error", "0", "0", "0", "0", "0", "0",false);
+                    setupModel = new SetupModel(-1,"Error", "0", "0", "0", "0", "0", "0",false);
                 }
 
                 DatabaseHelper databaseHelper = new DatabaseHelper(Setups.this);
 
-                boolean success = databaseHelper.addOne(setupStorage);
+                boolean success = databaseHelper.addOne(setupModel);
                 if(success==true)
                 {
                     Toast.makeText(Setups.this, "Added", Toast.LENGTH_SHORT).show();

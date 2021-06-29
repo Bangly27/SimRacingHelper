@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,7 +34,7 @@ public class SetupsListView extends AppCompatActivity {
         lv_new.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                SetupStorage clickedSetup = (SetupStorage) parent.getItemAtPosition(position);
+                SetupModel clickedSetup = (SetupModel) parent.getItemAtPosition(position);
                 databaseHelper.deleteOne(clickedSetup);
                 ShowSetupOnListView(databaseHelper);
                 Toast.makeText(SetupsListView.this, R.string.deleted, Toast.LENGTH_SHORT).show();
@@ -45,7 +44,7 @@ public class SetupsListView extends AppCompatActivity {
     }
 
     private void ShowSetupOnListView(DatabaseHelper databaseHelper2) {
-        setupsArrayAdapter = new ArrayAdapter<SetupStorage>(SetupsListView.this, android.R.layout.simple_list_item_1, databaseHelper2.selectAll());
+        setupsArrayAdapter = new ArrayAdapter<SetupModel>(SetupsListView.this, android.R.layout.simple_list_item_1, databaseHelper2.selectAll());
         lv_new.setAdapter(setupsArrayAdapter);
     }
 }

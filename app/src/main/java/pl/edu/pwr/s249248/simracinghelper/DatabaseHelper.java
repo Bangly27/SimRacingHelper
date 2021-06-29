@@ -41,18 +41,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addOne(SetupStorage setupStorage){
+    public boolean addOne(SetupModel setupModel){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         
-        cv.put(COLUMN_SETUP_NAME, setupStorage.getTrack_name());
-        cv.put(COLUMN_SETUP_AERODYNAMICS, setupStorage.getAero());
-        cv.put(COLUMN_SETUP_TRANSMISSION, setupStorage.getTransmission());
-        cv.put(COLUMN_SETUP_SUSPENSION, setupStorage.getSuspension());
-        cv.put(COLUMN_SETUP_SUSPENSION_GEOMETRY, setupStorage.getGeometry());
-        cv.put(COLUMN_SETUP_BRAKES, setupStorage.getBrakes());
-        cv.put(COLUMN_SETUP_TYRES, setupStorage.getTyres());
-        cv.put(COLUMN_SETUP_WET, setupStorage.isAreWetTyresOn());
+        cv.put(COLUMN_SETUP_NAME, setupModel.getTrack_name());
+        cv.put(COLUMN_SETUP_AERODYNAMICS, setupModel.getAero());
+        cv.put(COLUMN_SETUP_TRANSMISSION, setupModel.getTransmission());
+        cv.put(COLUMN_SETUP_SUSPENSION, setupModel.getSuspension());
+        cv.put(COLUMN_SETUP_SUSPENSION_GEOMETRY, setupModel.getGeometry());
+        cv.put(COLUMN_SETUP_BRAKES, setupModel.getBrakes());
+        cv.put(COLUMN_SETUP_TYRES, setupModel.getTyres());
+        cv.put(COLUMN_SETUP_WET, setupModel.isAreWetTyresOn());
 
         long insert = db.insert(SETUPS_TABLE, null, cv);
         if (insert == -1){
@@ -63,10 +63,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deleteOne(SetupStorage setupStorage){
+    public boolean deleteOne(SetupModel setupModel){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String queryString = "DELETE FROM " + SETUPS_TABLE + " WHERE " + COLUMN_ID + "=" + setupStorage.getId();
+        String queryString = "DELETE FROM " + SETUPS_TABLE + " WHERE " + COLUMN_ID + "=" + setupModel.getId();
         Cursor cursor = db.rawQuery(queryString, null);
 
         if(cursor.moveToFirst()){
@@ -77,8 +77,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<SetupStorage> selectAll(){
-        List<SetupStorage> returnList = new ArrayList<>();
+    public List<SetupModel> selectAll(){
+        List<SetupModel> returnList = new ArrayList<>();
 
         String queryString = "SELECT * FROM " + SETUPS_TABLE;
 
@@ -98,8 +98,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String tyres=cursor.getString(7);
                 boolean wets =cursor.getInt(8) == 1? true: false;
 
-                SetupStorage setupStorage = new SetupStorage(setup_id, setup_name, aero, transmission, suspension, geometry, brakes, tyres, wets);
-                returnList.add(setupStorage);
+                SetupModel setupModel = new SetupModel(setup_id, setup_name, aero, transmission, suspension, geometry, brakes, tyres, wets);
+                returnList.add(setupModel);
 
             } while (cursor.moveToNext());
         }
@@ -111,8 +111,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnList;
     }
 
-    public List<SetupStorage> returnNames(){
-        List<SetupStorage> returnList2 = new ArrayList<>();
+    public List<SetupModel> returnNames(){
+        List<SetupModel> returnList2 = new ArrayList<>();
 
         String queryString = "SELECT * FROM " + SETUPS_TABLE;
 
@@ -124,8 +124,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do {
                 String setup_name=cursor.getString(1);
 
-                SetupStorage setupStorage = new SetupStorage(setup_name);
-                returnList2.add(setupStorage);
+                SetupModel setupModel = new SetupModel(setup_name);
+                returnList2.add(setupModel);
 
             } while (cursor.moveToNext());
         }
