@@ -38,25 +38,41 @@ public class SetupModel {
     public String toString() {
         String language = Locale.getDefault().getLanguage();
         String lang_string = null;
+        String wet_tyres = null;
         if(language == "pl")
         {
+            if(areWetTyresOn==true){
+                wet_tyres = "Tak";
+            }
+            else{
+                wet_tyres = "Nie";
+            }
             lang_string=setup_name + "\n" + "\n"
                     + "Aerodynamika = " + aero + "\n"
                     + "Przekładnia = " + transmission + "\n"
                     + "Geometria zawieszenia = " + geometry + "\n"
                     + "Zawieszenie = " + suspension + "\n"
                     + "Hamulce = " + brakes + "\n"
-                    + "Opony = " + tyres + "\n";
+                    + "Opony = " + tyres + "\n"
+                    + "Opony deszczowe = " + wet_tyres + "\n";
         }
         else
         {
+            if(areWetTyresOn==true){
+                wet_tyres = "Yes";
+            }
+            else{
+                wet_tyres = "No";
+            }
             lang_string=setup_name + "\n" + "\n"
                     + "Aerodynamics = " + aero + "\n"
                     + "Transmission = " + transmission + "\n"
                     + "Suspension geometry = " + geometry + "\n"
                     + "Suspension = " + suspension + "\n"
                     + "Brakes = " + brakes + "\n"
-                    + "Tyres = " + tyres + "\n";
+                    + "Tyres = " + tyres + "\n"
+                    + "Wet tyres = " + wet_tyres + "\n";
+
         }
         return lang_string;
     }
